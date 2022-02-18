@@ -3,9 +3,9 @@ import Home from "../views/Home.vue";
 
 import { test, expect } from "vitest";
 
-test("mount component", () => {
+test("Mount Home component", () => {
   expect(Home).toBeTruthy();
 
-  const wrapper = mount(Home, {});
+  const wrapper = mount(Home);
   expect(wrapper.text()).toContain("Basic Scaffold");
 });

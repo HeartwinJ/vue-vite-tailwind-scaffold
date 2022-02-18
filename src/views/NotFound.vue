@@ -1,7 +1,9 @@
 <template>
-  <header class="bg-white shadow">
-    <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
-      <h1 class="text-3xl font-bold leading-tight text-gray-900">Not Found</h1>
-    </div>
-  </header>
+  <div class="flex h-full flex-col items-center justify-center bg-neutral-50">
+    <h2 class="tracking-light leading-12 text-5xl font-bold text-neutral-300">
+      <span class="text-red-400">404</span><br />
+      Not Found
+    </h2>
+    <router-link to="/" class="mt-8 text-xl underline text-red-400 hover:text-red-500">Go Home</router-link>
+  </div>
 </template>
