@@ -7,6 +7,8 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@bugsnag/js": "^7.16.1",
+    "@bugsnag/plugin-vue": "^7.16.1",
     "vue": "^3.2.31",
     "vue-router": "^4.0.12"
   },
@@ -22,6 +24,7 @@
     "autoprefixer": "^10.4.2",
     "prettier-plugin-tailwindcss": "^0.1.7",
     "tailwindcss": "^3.0.22",
-    "vite": "^2.8.1"
+    "vite": "^2.8.1",
+    "vite-plugin-bugsnag": "^2.0.0"
   }
 }

@@ -1,15 +1,25 @@
-import { createApp } from 'vue'
-import './tailwind.css'
-import App from './App.vue'
-import { routes } from './routes.js'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createApp } from "vue";
+import Bugsnag from "@bugsnag/js";
+import BugsnagPluginVue from "@bugsnag/plugin-vue";
+import "./tailwind.css";
+import App from "./App.vue";
+import { routes } from "./routes.js";
+import { createRouter, createWebHistory } from "vue-router";
 
-const app = createApp(App)
+Bugsnag.start({
+  apiKey: import.meta.env.VITE_BUGSNAG_API_KEY,
+  plugins: [new BugsnagPluginVue()],
+});
+
+const app = createApp(App);
+
+const bugsnagVue = Bugsnag.getPlugin("vue");
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
-})
+});
 
-app.use(router)
-app.mount('#app')
+app.use(bugsnagVue);
+app.use(router);
+app.mount("#app");
