@@ -7,7 +7,7 @@ import { routes } from "./routes.js";
 import { createRouter, createWebHistory } from "vue-router";
 
 Bugsnag.start({
-  apiKey: import.meta.env.VITE_BUGSNAG_API_KEY,
+  apiKey: import.meta.env.BGSNG_API_KEY,
   plugins: [new BugsnagPluginVue()],
 });
 
