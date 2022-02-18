@@ -11,6 +11,9 @@ export default ({ mode }) => {
   const isProd = mode == "production";
   return defineConfig({
     envPrefix: ["VITE_", "BGSNG_"],
+    test: {
+      environment: "happy-dom",
+    },
     plugins: [
       vue(),
       isProd &&
