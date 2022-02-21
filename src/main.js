@@ -5,6 +5,7 @@ import "./tailwind.css";
 import App from "./App.vue";
 import { routes } from "./routes.js";
 import { createRouter, createWebHistory } from "vue-router";
+import VueAuth0Plugin from "vue-auth0-plugin";
 
 Bugsnag.start({
   apiKey: import.meta.env.BGSNG_API_KEY,
@@ -20,6 +21,13 @@ const router = createRouter({
   routes,
 });
 
+const auth0Options = {
+  domain: import.meta.env.AUTH0_DOMAIN,
+  client_id: import.meta.env.AUTH0_CLIENT_ID,
+  redirect_uri: "http://localhost:3000/",
+};
+
 app.use(bugsnagVue);
 app.use(router);
+app.use(VueAuth0Plugin, auth0Options);
 app.mount("#app");
