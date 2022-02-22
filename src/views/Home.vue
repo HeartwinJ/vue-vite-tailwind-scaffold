@@ -23,11 +23,11 @@ function logout() {
     >
       Basic Scaffold
     </h1>
-    <div v-if="auth">
+    <div v-if="auth" class="mt-8">
       <router-link
         v-if="auth.authenticated"
         to="/profile"
-        class="mt-8 text-xl text-neutral-400 underline hover:text-neutral-500"
+        class="text-xl text-neutral-400 underline hover:text-neutral-500"
         >Go to Profile</router-link
       >
       <div class="mt-8" v-if="!auth.loading">

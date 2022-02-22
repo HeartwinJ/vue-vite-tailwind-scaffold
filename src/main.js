@@ -18,7 +18,7 @@ const app = createApp(App);
 const bugsnagVue = Bugsnag.getPlugin("vue");
 
 posthog.init(import.meta.env.PH_API_KEY, {
-  api_host: "https://app.posthog.com",
+  api_host: import.meta.env.PH_API_HOST,
 });
 
 const router = createRouter({
@@ -29,7 +29,7 @@ const router = createRouter({
 const auth0Options = {
   domain: import.meta.env.AUTH0_DOMAIN,
   client_id: import.meta.env.AUTH0_CLIENT_ID,
-  redirect_uri: "http://localhost:3000/",
+  redirect_uri: import.meta.env.AUTH0_REDIRECT_URI,
 };
 
 app.use(bugsnagVue);
