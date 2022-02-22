@@ -10,6 +10,7 @@
   "dependencies": {
     "@bugsnag/js": "^7.16.1",
     "@bugsnag/plugin-vue": "^7.16.1",
+    "posthog-js": "^1.17.8",
     "vue": "^3.2.31",
     "vue-auth0-plugin": "^2.5.1",
     "vue-router": "^4.0.12"

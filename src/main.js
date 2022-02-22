@@ -6,6 +6,7 @@ import App from "./App.vue";
 import { routes } from "./routes.js";
 import { createRouter, createWebHistory } from "vue-router";
 import VueAuth0Plugin from "vue-auth0-plugin";
+import posthog from "posthog-js";
 
 Bugsnag.start({
   apiKey: import.meta.env.BGSNG_API_KEY,
@@ -15,6 +16,10 @@ Bugsnag.start({
 const app = createApp(App);
 
 const bugsnagVue = Bugsnag.getPlugin("vue");
+
+posthog.init(import.meta.env.PH_API_KEY, {
+  api_host: "https://app.posthog.com",
+});
 
 const router = createRouter({
   history: createWebHistory(),

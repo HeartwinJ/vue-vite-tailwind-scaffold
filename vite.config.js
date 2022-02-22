@@ -10,7 +10,7 @@ export default ({ mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
   const isProd = mode == "production";
   return defineConfig({
-    envPrefix: ["VITE_", "BGSNG_", "AUTH0_"],
+    envPrefix: ["VITE_", "BGSNG_", "AUTH0_", "PH_"],
     test: {
       environment: "happy-dom",
     },
