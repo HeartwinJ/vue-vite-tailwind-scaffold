@@ -23,22 +23,29 @@ function logout() {
     >
       Basic Scaffold
     </h1>
-    <router-link v-if="auth.authenticated" to="/profile" class="mt-8 text-xl underline text-neutral-400 hover:text-neutral-500">Go to Profile</router-link>
-    <div class="mt-8" v-if="!auth.loading">
-      <button
-        class="rounded-lg bg-neutral-200 px-2 py-1 text-neutral-400"
-        v-if="!auth.authenticated"
-        @click="login"
-      >
-        Log in
-      </button>
-      <button
-        class="rounded-lg bg-neutral-200 px-2 py-1 text-neutral-400"
+    <div v-if="auth">
+      <router-link
         v-if="auth.authenticated"
-        @click="logout"
+        to="/profile"
+        class="mt-8 text-xl text-neutral-400 underline hover:text-neutral-500"
+        >Go to Profile</router-link
       >
-        Log out
-      </button>
+      <div class="mt-8" v-if="!auth.loading">
+        <button
+          class="rounded-lg bg-neutral-200 px-2 py-1 text-neutral-400"
+          v-if="!auth.authenticated"
+          @click="login"
+        >
+          Log in
+        </button>
+        <button
+          class="rounded-lg bg-neutral-200 px-2 py-1 text-neutral-400"
+          v-if="auth.authenticated"
+          @click="logout"
+        >
+          Log out
+        </button>
+      </div>
     </div>
   </div>
 </template>
