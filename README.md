@@ -1,18 +1,16 @@
-# ⚡ Vite + Vue 3 + Tailwind CSS ✔
+# Frontend Scaffold - Vite + Vue3 + Tailwind
 
-![Vite, Vue, Tailwind CSS](https://user-images.githubusercontent.com/11320080/111277027-a9384c00-8640-11eb-8323-21889bd7c609.png)
+This is a basic frontend Scaffold which will essentially be the boilerplate for building new apps.
 
-This starter template includes:
+This scaffold includes:
 
 - [Vite](https://vitejs.dev/guide/)
 - [Vue 3](https://vuejs.org/guide/introduction.html)
 - [Tailwind CSS v3](https://tailwindcss.com/docs/configuration)
 - [Vue Router v4](https://github.com/vuejs/router)
-- [Inter var font](https://github.com/rsms/inter) (self-hosted, woff2, v3.19, with 'preload' attr, check out index.html)
-- [Headless UI](https://headlessui.dev/vue/menu) - unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS
-- [Heroicons](https://github.com/tailwindlabs/heroicons#vue) - beautiful hand-crafted SVG icons,
-by the makers of Tailwind CSS
-- [prettier-plugin-tailwindcss](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier) - Automatic Class Sorting with Prettier
+- [Headless UI](https://headlessui.dev/vue/menu)
+- [Heroicons](https://github.com/tailwindlabs/heroicons#vue)
+- [prettier-plugin-tailwindcss](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier)
 
 First-party plugins needed for Tailwind UI:
 
@@ -21,20 +19,21 @@ First-party plugins needed for Tailwind UI:
 - [tailwindcss/line-clamp](https://github.com/tailwindlabs/tailwindcss-line-clamp)
 - [tailwindcss/aspect-ratio](https://github.com/tailwindlabs/tailwindcss-aspect-ratio)
 
-### Getting Started
+Other tools intergrated:
+- [Bugsnag](https://docs.bugsnag.com/)
+- [Auth0](https://auth0.com/docs)
+- [Posthog](https://posthog.com/docs)
 
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/web2033/vite-vue3-tailwind-starter)
+## Getting Started
 
-```sh
-npx degit web2033/vite-vue3-tailwind-starter vvt-app
-cd vvt-app
-```
+1. Fork the master branch of this repository.
+2. Run `npm install` from the root of the repo to install dependencies.
 
-```sh
-npm i
-npm run dev
-npm run build
-npm run serve
-```
+## Available Scripts
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/web2033/vite-vue3-tailwind-starter)
+- Dev: `vite --host`
+- Build: `vite build`
+- Serve: `vite build`
+- Test: `vitest --dom`
+
+To run the scripts, use `npm run <script name>`
