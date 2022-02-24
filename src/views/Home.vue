@@ -1,18 +1,32 @@
 <script setup>
-import { injectAuth } from "vue-auth0-plugin";
+import { onMounted } from "vue";
 import { CodeIcon } from "@heroicons/vue/outline";
+import axios from "axios";
 
-const auth = injectAuth();
+onMounted(() => {
+  const options = {
+    method: "POST",
+    url: `https://${import.meta.env.AUTH0_DOMAIN}/oauth/token`,
+    headers: { "content-type": "application/json" },
+    data: {
+      grant_type: "client_credentials",
+      client_id: import.meta.env.AUTH0_CLIENT_ID,
+      client_secret: import.meta.env.AUTH0_CLIENT_SECRET,
+      audience: import.meta.env.AUTH0_API_IDENTIFIER,
+    },
+  };
 
-function login() {
-  auth.loginWithRedirect();
-}
-
-function logout() {
-  auth.logout({
-    returnTo: window.location.origin,
-  });
-}
+  axios
+    .request(options)
+    .then(function (response) {
+      console.log(response.data);
+      localStorage.setItem("access_token", response.data.access_token);
+      localStorage.setItem("expires_in", response.data.expires_in);
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+});
 </script>
 
 <template>
@@ -23,29 +37,5 @@ function logout() {
     >
       Basic Scaffold
     </h1>
-    <div v-if="auth" class="mt-8">
-      <router-link
-        v-if="auth.authenticated"
-        to="/profile"
-        class="text-xl text-neutral-400 underline hover:text-neutral-500"
-        >Go to Profile</router-link
-      >
-      <div class="mt-8" v-if="!auth.loading">
-        <button
-          class="rounded-lg bg-neutral-200 px-2 py-1 text-neutral-400"
-          v-if="!auth.authenticated"
-          @click="login"
-        >
-          Log in
-        </button>
-        <button
-          class="rounded-lg bg-neutral-200 px-2 py-1 text-neutral-400"
-          v-if="auth.authenticated"
-          @click="logout"
-        >
-          Log out
-        </button>
-      </div>
-    </div>
   </div>
 </template>
