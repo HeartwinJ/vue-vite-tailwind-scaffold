@@ -28,6 +28,17 @@ Other tools intergrated:
 
 1. Fork the master branch of this repository.
 2. Run `npm install` from the root of the repo to install dependencies.
+3. Update the values of environment Variables.
+
+## Environment Variables
+
+- Your Bugsnag API Key - `BGSNG_API_KEY`
+- Your Auth0 Domain URL - `AUTH0_DOMAIN`
+- Your Auth0 Client ID - `AUTH0_CLIENT_ID`
+- Your Auth0 Client Secret - `AUTH0_CLIENT_SECRET`
+- Your Auth0 API Identifier - `AUTH0_API_IDENTIFIER`
+- Your PostHog API Key - `PH_API_KEY`
+- Your PostHog API Host URL - `PH_API_HOST`
 
 ## Available Scripts
 
