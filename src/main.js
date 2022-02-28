@@ -6,6 +6,7 @@ import App from "./App.vue";
 import { routes } from "./routes.js";
 import { createRouter, createWebHistory } from "vue-router";
 import posthog from "posthog-js";
+import { plugin, defaultConfig } from '@formkit/vue'
 
 Bugsnag.start({
   apiKey: import.meta.env.BGSNG_API_KEY,
@@ -27,4 +28,5 @@ const router = createRouter({
 
 app.use(bugsnagVue);
 app.use(router);
+app.use(plugin, defaultConfig);
 app.mount("#app");

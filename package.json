@@ -10,6 +10,7 @@
   "dependencies": {
     "@bugsnag/js": "^7.16.1",
     "@bugsnag/plugin-vue": "^7.16.1",
+    "@formkit/vue": "^1.0.0-beta.4",
     "axios": "^0.26.0",
     "posthog-js": "^1.17.8",
     "vue": "^3.2.31",
